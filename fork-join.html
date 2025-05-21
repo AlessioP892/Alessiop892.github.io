@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>EvoSphereOS - Fork-Join</title>
+  <link rel="stylesheet" href="style.css" />
+  <script defer src="script.js"></script>
+</head>
+<body>
+<header class="header">
+  <div class="logo">EvoSphere<span class="highlight">OS</span></div>
+  <button class="hamburger" aria-label="Menu">&#9776;</button>
+  <nav class="navbar">
+    <ul>
+      <li><a href="index.html" class="nav-box">Home</a></li>
+      <li class="dropdown">
+        <a href="#" class="dropdown-toggle nav-box active">Concetti</a>
+        <ul class="dropdown-menu">
+          <li><a href="parallelo-vs-sequenziale.html">Sequenziale vs Parallelo</a></li>
+          <li><a href="programmazione-concorrente.html">Programmazione Concorrente</a></li>
+          <li><a href="grafo-precedenze.html">Grafo delle Precedenze</a></li>
+          <li><a href="cobegin-coend.html">Cobegin-Coend</a></li>
+          <li><a href="deadlock.html">Deadlock</a></li>
+        </ul>
+      </li>
+      <li><a href="contatti.html" class="nav-box">Contatti</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main class="hero fade-in">
+
+  <div class="card">
+    <h1>Fork-Join</h1>
+    <p>
+      Il modello Fork-Join è una tecnica fondamentale per strutturare e semplificare la programmazione parallela, specialmente nei sistemi multi-core.
+      Consente di suddividere un compito complesso in più sotto-compiti che possono essere eseguiti simultaneamente, migliorando l’efficienza e la scalabilità.
+    </p>
+  </div>
+
+  <div class="card">
+    <h2>Concetto di Fork</h2>
+    <p>
+      Il "fork" rappresenta il punto in cui un processo o thread si divide in più attività parallele indipendenti.
+      Questa suddivisione consente di sfruttare le risorse hardware disponibili, eseguendo più operazioni contemporaneamente senza dover attendere il completamento di ciascuna singolarmente.
+      È importante progettare i fork in modo che le attività generate siano bilanciate e di dimensioni simili per evitare squilibri e inefficienze.
+    </p>
+  </div>
+
+  <div class="card">
+    <h2>Concetto di Join</h2>
+    <p>
+      Il "join" è la fase in cui tutte le attività parallele create dal fork devono essere sincronizzate e i risultati combinati per procedere.
+      Solo quando tutti i sotto-compiti sono completati, il flusso di esecuzione può continuare oltre il punto di join.
+      Questa sincronizzazione è critica per mantenere la correttezza del programma e prevenire condizioni di gara o errori di concorrenza.
+    </p>
+  </div>
+
+  <div class="card">
+    <h2>Vantaggi del Modello Fork-Join</h2>
+    <p>
+      Il modello Fork-Join offre una struttura semplice e intuitiva per parallelizzare algoritmi, facilitando il design, la manutenzione e il debug.
+      Inoltre, si integra bene con molti framework e librerie moderne di programmazione concorrente come Java Fork/Join Framework, Cilk, OpenMP, e Task Parallel Library (.NET).
+      Permette di ottenere un significativo incremento di performance riducendo i tempi di esecuzione tramite l’utilizzo efficiente delle CPU multi-core.
+    </p>
+  </div>
+
+  <div class="card">
+    <h2>Applicazioni Tipiche</h2>
+    <p>
+      Numerose applicazioni traggono beneficio dal modello Fork-Join: elaborazione di grandi dataset, algoritmi di ordinamento come il mergesort parallelo, ricerca e analisi di grafi,
+      calcolo scientifico e simulazioni, elaborazione di immagini e video, e molti altri.
+      L’approccio permette di dividere in modo naturale il lavoro e di gestire grandi carichi in modo distribuito.
+    </p>
+  </div>
+
+  <div class="card">
+    <h2>Considerazioni sulle Performance</h2>
+    <p>
+      Anche se il modello Fork-Join migliora notevolmente la parallelizzazione, è fondamentale gestire correttamente il bilanciamento del carico e ridurre l’overhead di sincronizzazione.
+      Se il numero di fork è troppo elevato o le attività troppo piccole, l’overhead può superare i benefici.
+      Inoltre, è importante evitare situazioni di deadlock o starvation attraverso un’adeguata progettazione delle dipendenze tra task.
+    </p>
+  </div>
+
+  <div class="card">
+    <h2>Strumenti e Framework</h2>
+    <p>
+      Molti ambienti di sviluppo offrono supporto nativo per il modello Fork-Join, facilitando la sua implementazione.
+      Java, ad esempio, ha un framework dedicato che gestisce in modo efficiente la creazione, esecuzione e sincronizzazione dei task.
+      Altri strumenti come Intel TBB, Cilk Plus e librerie per linguaggi funzionali supportano concetti analoghi, offrendo astrazioni di alto livello per semplificare la parallelizzazione.
+    </p>
+  </div>
+
+  <div class="card">
+    <h2>Conclusioni</h2>
+    <p>
+      Il modello Fork-Join rappresenta una delle basi della programmazione parallela moderna, combinando semplicità e potenza.
+      Permette di strutturare in modo chiaro i programmi paralleli, sfruttando efficacemente le risorse hardware per migliorare le performance.
+      Una buona progettazione e comprensione di questo modello è essenziale per chi sviluppa sistemi concorrenti e applicazioni performanti.
+    </p>
+  </div>
+
+</main>
+
+<footer class="footer">
+  <div class="wave-container">
+    <svg class="wave" viewBox="0 0 1440 320" preserveAspectRatio="none" aria-hidden="true" focusable="false">
+      <path fill="#00bfff" fill-opacity="0.08">
+        <animate attributeName="d" dur="25s" repeatCount="indefinite"
+          values="
+            M0,160 C480,100 960,220 1440,160 L1440,320 L0,320 Z;
+            M0,180 C400,260 1040,60 1440,180 L1440,320 L0,320 Z;
+            M0,160 C480,100 960,220 1440,160 L1440,320 L0,320 Z
+          " />
+      </path>
+      <path fill="#00ffff" fill-opacity="0.06">
+        <animate attributeName="d" dur="35s" repeatCount="indefinite"
+          values="
+            M0,200 C300,100 1140,300 1440,200 L1440,320 L0,320 Z;
+            M0,150 C500,250 940,100 1440,150 L1440,320 L0,320 Z;
+            M0,200 C300,100 1140,300 1440,200 L1440,320 L0,320 Z
+          " />
+      </path>
+      <path fill="#ffffff" fill-opacity="0.05">
+        <animate attributeName="d" dur="40s" repeatCount="indefinite"
+          values="
+            M0,180 C400,220 1040,140 1440,180 L1440,320 L0,320 Z;
+            M0,160 C480,120 960,240 1440,160 L1440,320 L0,320 Z;
+            M0,180 C400,220 1040,140 1440,180 L1440,320 L0,320 Z
+          " />
+      </path>
+    </svg>
+  </div>
+  <p>&copy; 2025 EvoSphereOS | Progetto scolastico - Tutti i diritti riservati</p>
+</footer>
+
+</body>
+</html>

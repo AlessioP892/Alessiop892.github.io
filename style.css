@@ -1,0 +1,335 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@400;700&display=swap');
+
+/* Reset */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  scroll-behavior: smooth;
+}
+
+html, body {
+  width: 100%;
+  overflow-x: hidden;
+}
+
+body {
+  background: #121212;
+  color: #f0f0f0;
+  font-family: 'Rubik', sans-serif;
+  font-weight: 400;
+  line-height: 1.6;
+  position: relative;
+  padding-bottom: 100px;
+}
+
+/* Sfondo animato */
+.wave-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.wave {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  transform: scaleY(2);
+  opacity: 0.8;
+}
+
+/* Header */
+.header {
+  background-color: rgba(31, 31, 31, 0.8);
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow:
+    0 0 20px rgba(0, 200, 255, 0.1),
+    0 0 30px rgba(204, 0, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border-radius: 15px;
+  margin: 10px 20px;
+}
+
+/* Logo animato */
+.logo {
+  font-size: 2rem;
+  font-weight: 700;
+  background: linear-gradient(270deg, #00c6ff, #ff00c8, #00ffea, #ff00c8, #00c6ff);
+  background-size: 1000% 1000%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: gradientShift 12s ease infinite;
+  user-select: none;
+}
+
+.logo .highlight {
+  color: #00c6ff;
+  -webkit-text-fill-color: initial;
+}
+
+@keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Hamburger */
+.hamburger {
+  display: none;
+  font-size: 1.8rem;
+  color: #00c6ff;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+/* Navbar */
+.navbar ul {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  padding: 0;
+  margin: 0;
+}
+
+.navbar li {
+  position: relative;
+}
+
+/* Link Navbar */
+.nav-box {
+  padding: 8px 14px;
+  border-radius: 12px;
+  background-color: rgba(0, 198, 255, 0.15);
+  transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.4s ease;
+  display: inline-block;
+  color: #f0f0f0;
+  font-weight: 600;
+  text-decoration: none;
+  user-select: none;
+  box-shadow: 0 0 10px rgba(0, 198, 255, 0.4), 0 0 15px rgba(204, 0, 255, 0.3);
+}
+
+.nav-box:hover {
+  background-color: rgba(0, 198, 255, 0.35);
+  color: #00c6ff;
+  box-shadow: 0 0 15px rgba(0, 198, 255, 0.8), 0 0 25px rgba(204, 0, 255, 0.6);
+}
+
+.dropdown > a::after {
+  content: ' ▼';
+  font-size: 0.7em;
+}
+
+/* Dropdown */
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #2a2a2a;
+  border: 1px solid #444;
+  padding: 10px 0;
+  border-radius: 6px;
+  z-index: 500;
+  min-width: 220px;
+  box-shadow: 0 0 10px rgba(0, 198, 255, 0.4), 0 0 15px rgba(204, 0, 255, 0.3);
+  visibility: hidden;
+  opacity: 0;
+  transition: all 0.3s ease;
+}
+
+.dropdown-menu.show {
+  display: block;
+  visibility: visible;
+  opacity: 1;
+}
+
+.dropdown-menu li {
+  padding: 0;
+}
+
+.dropdown-menu a {
+  padding: 10px 20px;
+  display: block;
+  color: #f0f0f0;
+  text-decoration: none;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 0 5px rgba(0, 198, 255, 0.25);
+  border-radius: 6px;
+}
+
+.dropdown-menu a:hover {
+  background-color: #333;
+  box-shadow: 0 0 15px rgba(0, 198, 255, 0.7), 0 0 20px rgba(204, 0, 255, 0.5);
+}
+
+/* Main */
+main {
+  padding: 60px 20px;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.hero {
+  text-align: center;
+}
+
+.intro {
+  margin-bottom: 40px;
+}
+
+h1, h2, h3 {
+  font-weight: 700;
+  margin-bottom: 20px;
+  color: #fff;
+}
+
+.btn {
+  background: linear-gradient(45deg, #00c6ff, #0072ff);
+  color: white;
+  padding: 12px 20px;
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: 700;
+  transition: transform 0.3s;
+  display: inline-block;
+  margin-top: 20px;
+}
+
+.btn:hover {
+  transform: scale(1.05);
+}
+
+.features {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+  margin-top: 40px;
+}
+
+/* CARD */
+.card {
+  background-color: #1f1f1f;
+  border: 1px solid #333;
+  padding: 20px;
+  border-radius: 12px;
+  flex: 1 1 320px;
+  max-width: 400px;
+  min-width: 280px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 0 15px rgba(204, 0, 255, 0.15), 0 0 30px rgba(0, 204, 255, 0.1);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 30px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.card h3, .card p {
+  margin: 0;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0 25px rgba(255, 0, 255, 0.25), 0 0 40px rgba(0, 255, 255, 0.2);
+}
+
+.details, .roadmap {
+  margin-top: 60px;
+}
+
+/* Footer */
+footer {
+  background-color: #1f1f1f;
+  padding: 20px;
+  text-align: center;
+  font-size: 0.9rem;
+  color: #aaa;
+  box-shadow: 0 0 10px rgba(0, 198, 255, 0.3), 0 0 15px rgba(204, 0, 255, 0.2);
+}
+
+/* Animazioni */
+.fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeIn 1s ease-out forwards;
+}
+
+.fade-in.in-view {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive */
+@media (max-width: 1000px) {
+  .features {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .card {
+    flex: 1 1 100%;
+    max-width: 90%;
+    margin-bottom: 25px;
+  }
+}
+
+@media (max-width: 600px) {
+  .card {
+    padding: 16px;
+    font-size: 0.95rem;
+  }
+
+  .btn {
+    width: 100%;
+    text-align: center;
+  }
+}
+
+/* --- STILE PER IL BOX IMMAGINE --- */.image-card {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  background: rgba(255, 255, 255, 0.15);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  border-radius: 12px;
+  margin: 20px auto 40px auto;
+  max-width: 900px;
+}
+
+.image-card img {
+  width: 100%;
+  max-width: 600px; /* limite larghezza max */
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 191, 255, 0.3);
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}

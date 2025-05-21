@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>EvoSphereOS - Cobegin-Coend</title>
+  <link rel="stylesheet" href="style.css" />
+  <script defer src="script.js"></script>
+</head>
+<body>
+  <header class="header">
+    <div class="logo">
+      EvoSphere<span class="highlight">OS</span>
+    </div>
+    <button class="hamburger" aria-label="Menu">&#9776;</button>
+    <nav class="navbar">
+      <ul>
+        <li><a href="index.html" class="nav-box">Home</a></li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle nav-box active">Concetti</a>
+          <ul class="dropdown-menu">
+            <li><a href="parallelo-vs-sequenziale.html">Sequenziale vs Parallelo</a></li>
+            <li><a href="programmazione-concorrente.html">Programmazione Concorrente</a></li>
+            <li><a href="grafo-precedenze.html">Grafo delle Precedenze</a></li>
+            <li><a href="fork-join.html">Fork-Join</a></li>
+            <li><a href="deadlock.html">Deadlock</a></li>
+          </ul>
+        </li>
+        <li><a href="contatti.html" class="nav-box">Contatti</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="hero fade-in">
+
+    <div class="card">
+      <h1>Cobegin-Coend</h1>
+      <p>
+        Le istruzioni Cobegin e Coend permettono di eseguire blocchi di codice in parallelo,
+        iniziando con Cobegin e terminando con Coend, facilitando così la programmazione concorrente.
+      </p>
+    </div>
+
+    <div class="card">
+      <h2>Cos'è Cobegin-Coend?</h2>
+      <p>
+        Il costrutto Cobegin-Coend viene utilizzato per definire un blocco di istruzioni che devono essere eseguite simultaneamente.
+        Tutti i thread o processi all'interno del blocco Cobegin vengono avviati contemporaneamente, e il controllo riprende solo dopo che tutte le attività sono terminate con Coend.
+      </p>
+    </div>
+
+    <div class="card">
+      <h2>Come funziona</h2>
+      <p>
+        Quando il programma incontra un Cobegin, crea più thread indipendenti che eseguono le istruzioni al suo interno in parallelo.
+        La parola chiave Coend segnala la fine del blocco parallelo e il programma aspetta che tutti i thread finiscano prima di continuare.
+      </p>
+    </div>
+
+    <div class="card">
+      <h2>Vantaggi</h2>
+      <p>
+        Questo meccanismo semplifica la scrittura di programmi paralleli evitando la complessità di gestire thread manualmente.
+        Inoltre, permette di sfruttare al meglio i processori multi-core migliorando le prestazioni.
+      </p>
+    </div>
+
+    <div class="card">
+      <h2>Applicazioni tipiche</h2>
+      <p>
+        Cobegin-Coend è utile in contesti dove più operazioni indipendenti devono essere eseguite contemporaneamente,
+        come il calcolo di funzioni indipendenti, elaborazioni dati parallele, o operazioni di I/O che possono essere svolte in parallelo.
+      </p>
+    </div>
+
+    <div class="card">
+      <h2>Limitazioni e problematiche</h2>
+      <p>
+        Sebbene Cobegin-Coend semplifichi il parallelismo, bisogna fare attenzione a problemi di sincronizzazione e condivisione delle risorse.
+        Se più thread modificano dati condivisi senza sincronizzazione, possono verificarsi race condition o incoerenze.
+      </p>
+    </div>
+
+    <div class="card">
+      <h2>Esempio di codice</h2>
+      <pre><code>
+Cobegin
+  { operazione_1(); }
+  { operazione_2(); }
+  { operazione_3(); }
+Coend
+      </code></pre>
+      <p>
+        In questo esempio, operazione_1, operazione_2 e operazione_3 vengono eseguite contemporaneamente.
+        Il programma aspetta che tutte e tre finiscano prima di proseguire.
+      </p>
+    </div>
+
+  </main>
+
+  <footer class="footer">
+    <div class="wave-container">
+      <svg class="wave" viewBox="0 0 1440 320" preserveAspectRatio="none" aria-hidden="true" focusable="false">
+        <path fill="#00bfff" fill-opacity="0.08">
+          <animate attributeName="d" dur="25s" repeatCount="indefinite"
+            values="
+              M0,160 C480,100 960,220 1440,160 L1440,320 L0,320 Z;
+              M0,180 C400,260 1040,60 1440,180 L1440,320 L0,320 Z;
+              M0,160 C480,100 960,220 1440,160 L1440,320 L0,320 Z
+            " />
+        </path>
+        <path fill="#00ffff" fill-opacity="0.06">
+          <animate attributeName="d" dur="35s" repeatCount="indefinite"
+            values="
+              M0,200 C300,100 1140,300 1440,200 L1440,320 L0,320 Z;
+              M0,150 C500,250 940,100 1440,150 L1440,320 L0,320 Z;
+              M0,200 C300,100 1140,300 1440,200 L1440,320 L0,320 Z
+            " />
+        </path>
+        <path fill="#ffffff" fill-opacity="0.05">
+          <animate attributeName="d" dur="40s" repeatCount="indefinite"
+            values="
+              M0,180 C400,220 1040,140 1440,180 L1440,320 L0,320 Z;
+              M0,160 C480,120 960,240 1440,160 L1440,320 L0,320 Z;
+              M0,180 C400,220 1040,140 1440,180 L1440,320 L0,320 Z
+            " />
+        </path>
+      </svg>
+    </div>
+    <p>&copy; 2025 EvoSphereOS | Progetto scolastico - Tutti i diritti riservati</p>
+  </footer>
+  
+</body>
+</html>

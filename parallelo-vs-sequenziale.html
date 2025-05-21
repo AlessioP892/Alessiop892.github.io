@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Elaborazione Sequenziale vs Parallela - EvoSphereOS</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="header">
+    <div class="logo">Evo<span class="highlight">Sphere</span>OS</div>
+    <nav class="navbar">
+      <ul>
+        <li><a href="index.html" class="nav-box">Home</a></li>
+        <li class="dropdown">
+          <a href="#" class="nav-box">Concetti</a>
+          <ul class="dropdown-menu">
+            <li><a href="programmazione-concorrente.html">Programmazione Concorrente</a></li>
+            <li><a href="grafo-precedenze.html">Grafo delle Precedenze</a></li>
+            <li><a href="fork-join.html">Fork-Join</a></li>
+            <li><a href="cobegin-coend.html">Cobegin-Coend</a></li>
+            <li><a href="deadlock.html">Deadlock</a></li>
+          </ul>
+        </li>
+        <li><a href="index.html#contatti" class="nav-box">Contatti</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <div class="card">
+      <h1>Elaborazione Sequenziale vs Parallela</h1>
+      <p>
+        L'elaborazione sequenziale e quella parallela rappresentano due paradigmi fondamentali nel campo
+        della programmazione e dell'esecuzione dei processi computazionali.
+      </p>
+      <p>
+        Nell'elaborazione sequenziale, le istruzioni vengono eseguite una dopo l'altra in un ordine preciso.
+        Questo modello è semplice da implementare e da comprendere, ma può risultare inefficiente
+        quando si hanno a disposizione sistemi hardware moderni con più unità di calcolo.
+      </p>
+    </div>
+
+    <div class="card">
+      <h2>Elaborazione Sequenziale</h2>
+      <p>
+        Nel paradigma sequenziale, ogni operazione deve essere completata prima che la successiva abbia
+        inizio. Questo garantisce un ordine rigoroso e facilita la gestione della logica del programma,
+        ma non sfrutta la potenza dei processori multicore o di più macchine contemporaneamente.
+      </p>
+      <p>
+        Un esempio classico è il ciclo for tradizionale, dove ogni iterazione viene eseguita una dopo l'altra.
+      </p>
+    </div>
+
+    <div class="card">
+      <h2>Elaborazione Parallela</h2>
+      <p>
+        L'elaborazione parallela consente l'esecuzione simultanea di più istruzioni o processi.
+        Ciò si traduce in un notevole miglioramento delle prestazioni, soprattutto in applicazioni
+        ad alta intensità computazionale.
+      </p>
+      <p>
+        Tuttavia, il paradigma parallelo introduce complessità, come la sincronizzazione, la gestione delle
+        risorse condivise, e la prevenzione di condizioni di gara e deadlock.
+      </p>
+    </div>
+
+    <div class="card">
+      <h2>Confronto e Considerazioni</h2>
+      <p>
+        La scelta tra elaborazione sequenziale e parallela dipende dal tipo di problema da risolvere,
+        dalla struttura dei dati e dall'architettura hardware a disposizione.
+      </p>
+      <p>
+        In generale, l'elaborazione parallela è preferibile per problemi che possono essere suddivisi in
+        sottoproblemi indipendenti, mentre quella sequenziale è più adatta per compiti lineari o con forte
+        dipendenza tra le operazioni.
+      </p>
+    </div>
+
+    <div class="card">
+      <h2>Conclusioni</h2>
+      <p>
+        Comprendere le differenze e le applicazioni di questi due paradigmi è essenziale per progettare
+        software efficiente e scalabile nell'era dei processori multicore e dei sistemi distribuiti.
+      </p>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="wave-container">
+      <svg class="wave" viewBox="0 0 1440 320" preserveAspectRatio="none" aria-hidden="true" focusable="false">
+        <path fill="#00bfff" fill-opacity="0.08">
+          <animate attributeName="d" dur="25s" repeatCount="indefinite"
+            values="
+              M0,160 C480,100 960,220 1440,160 L1440,320 L0,320 Z;
+              M0,180 C400,260 1040,60 1440,180 L1440,320 L0,320 Z;
+              M0,160 C480,100 960,220 1440,160 L1440,320 L0,320 Z
+            " />
+        </path>
+        <path fill="#00ffff" fill-opacity="0.06">
+          <animate attributeName="d" dur="35s" repeatCount="indefinite"
+            values="
+              M0,200 C300,100 1140,300 1440,200 L1440,320 L0,320 Z;
+              M0,150 C500,250 940,100 1440,150 L1440,320 L0,320 Z;
+              M0,200 C300,100 1140,300 1440,200 L1440,320 L0,320 Z
+            " />
+        </path>
+        <path fill="#ffffff" fill-opacity="0.05">
+          <animate attributeName="d" dur="40s" repeatCount="indefinite"
+            values="
+              M0,180 C400,220 1040,140 1440,180 L1440,320 L0,320 Z;
+              M0,160 C480,120 960,240 1440,160 L1440,320 L0,320 Z;
+              M0,180 C400,220 1040,140 1440,180 L1440,320 L0,320 Z
+            " />
+        </path>
+      </svg>
+    </div>
+    <p>&copy; 2025 EvoSphereOS | Progetto scolastico - Tutti i diritti riservati</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
